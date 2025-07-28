@@ -2,26 +2,31 @@ from langchain_core.tools import tool
 
 class ReportingTools:
     @tool('Summarize Agent Outputs')
-    def summarize_outputs(task_outputs: str) -> str:
-        """Summarizes the outputs from all agents into a final report.
-        The input to this tool should be a string containing all the outputs from previous agents.
+    def summarize_outputs(listing_output: str, pricing_output: str, logistics_output: str) -> str:
+        """Summarizes the outputs from the listing, pricing, and logistics agents into a final report.
+        The input to this tool should be the string outputs from the respective tasks.
         """
         print("--- Reporting Agent ---")
-        print(f'Received outputs to summarize: {task_outputs}')
-        
+        print(f'Received Listing Output: {listing_output}')
+        print(f'Received Pricing Output: {pricing_output}')
+        print(f'Received Logistics Output: {logistics_output}')
+
         # In a real-world scenario, this might involve more complex formatting,
         # saving to a file, or sending an email.
         summary = f"""\
         **E-Commerce Task Summary Report**
 
-        **Generated Listing:**
-        {task_outputs}
+        **1. Product Listing:**
+        {listing_output}
 
-        **Final Pricing and Logistics:**
-        - The product has been priced and logistics have been planned.
+        **2. Pricing Strategy:**
+        - {pricing_output}
+
+        **3. Logistics Plan:**
+        - {logistics_output}
 
         **Conclusion:**
-        The product is ready to be pushed to the marketplace.
+        All tasks are complete. The product is ready for market launch.
         """
         print(f'Generated Summary Report:\n{summary}')
         return summary

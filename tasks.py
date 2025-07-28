@@ -42,10 +42,10 @@ class ProductTasks():
     def reporting_task(self, agent):
         return Task(
             description=(
-                'Summarize the outputs from the listing, pricing, and logistics tasks into a final report. '\
-                'Ensure the report is clear, concise, and ready for a business stakeholder.'
+                'Summarize the outputs from the listing, pricing, and logistics tasks into a final report. '
+                'Use the outputs from the `list_product_task`, `price_product_task`, and `plan_logistics_task` as the `listing_output`, `pricing_output`, and `logistics_output` arguments for the `summarize_outputs` tool.'
             ),
-            expected_output='A comprehensive summary report of all the agent activities.',
+            expected_output='A comprehensive summary report detailing the product listing, pricing, and logistics plan.',
             agent=agent,
             context=[] # Context will be added in the crew setup
         )
