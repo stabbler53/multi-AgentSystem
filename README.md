@@ -36,25 +36,54 @@ After installing Ollama, you must pull the `llama3` model by running:
 ollama pull llama3
 ```
 
-## Installation
+## Installation & Setup
 
-1.  **Clone the repository:**
+Follow these steps to get the project running on your local machine.
+
+1.  **Clone the Repository**
+
+    Open your terminal and clone the repository:
     ```bash
-    git clone https://github.com/stabbler53/multi-AgentSystem
+    git clone https://github.com/stabbler53/multi-AgentSystem.git
     cd multi-AgentSystem
     ```
 
-2.  **Install the required dependencies:**
+2.  **Create a Virtual Environment (Recommended)**
+
+    It's best practice to create a virtual environment to manage project dependencies.
+    ```bash
+    python -m venv venv
+    ```
+    Activate the environment:
+    - On Windows:
+      ```bash
+      .\venv\Scripts\activate
+      ```
+    - On macOS/Linux:
+      ```bash
+      source venv/bin/activate
+      ```
+
+3.  **Install Dependencies**
+
+    Install all the required Python packages:
     ```bash
     pip install -r requirements.txt
     ```
 
 ## How to Run
 
-Simply execute the `main.py` script from the project's root directory:
+With Ollama running and the setup complete, you can now run the multi-agent system.
 
-```bash
-python main.py
-```
+1.  **Ensure Ollama is Running**
 
-The script will kick off the crew with a sample product, and you will see the agents working in sequence in your terminal.
+    Make sure the Ollama application is running in the background.
+
+2.  **Execute the Script**
+
+    Run the main script from the project's root directory:
+    ```bash
+    python main.py
+    ```
+
+You will see the output in your terminal as each agent performs its task in sequence, starting with the Product Lister and ending with the Reporting Officer.
