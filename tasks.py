@@ -45,7 +45,7 @@ class ProductTasks():
                 'Summarize the outputs from the listing, pricing, and logistics tasks into a final report. '
                 'Use the outputs from the `list_product_task`, `price_product_task`, and `plan_logistics_task` as the `listing_output`, `pricing_output`, and `logistics_output` arguments for the `summarize_outputs` tool.'
             ),
-            expected_output='A comprehensive summary report detailing the product listing, pricing, and logistics plan.',
+            expected_output='The final summary report, formatted as a single block of text, containing the complete product listing, the final price, and the detailed logistics plan. The report should start with "**E-Commerce Task Summary Report**".',
             agent=agent,
             context=[] # Context will be added in the crew setup
         )
